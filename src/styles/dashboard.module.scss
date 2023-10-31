@@ -1,0 +1,30 @@
+.card {
+  background-color: rgb(203 213 225);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+  margin: auto;
+  margin-top: 2%;
+
+  .userImage {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .userName {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+
+  .userEmail {
+    color: #777;
+    margin-top: 5px;
+  }
+}

@@ -1,0 +1,104 @@
+// Define SCSS styles for the parent container
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(203 213 225);
+  padding: 10px;
+  border: 2px solid;
+  border-radius: 10px;
+}
+
+// Define styles for the brand image
+.brandImg {
+  width: 200px; // You can adjust the width and height as needed
+  height: 55px;
+  margin-right: 5px;
+}
+
+.brandImg a {
+  text-decoration: none;
+}
+
+// Define styles for buttons
+.button {
+  background-color: #ff6600;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  border-radius: 10%;
+
+  &:hover {
+    background-color: #ff9933; // Change the color on hover
+  }
+}
+
+// Apply specific styles to the Logout button
+.logoutButton {
+  background-color: #cc0000;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  border-radius: 10%;
+
+  &:hover {
+    background-color: #ff9933;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(203 213 225);
+    padding: 5px;
+    border: 2px solid;
+    border-radius: 6px;
+  }
+
+  // Define styles for the brand image
+  .brandImg {
+    width: 100px; // You can adjust the width and height as needed
+    height: 40px;
+    margin-right: 5px;
+  }
+
+  .brandImg a {
+    text-decoration: none;
+  }
+
+  // Define styles for buttons
+  .button {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 4px 8px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 10%;
+
+    &:hover {
+      background-color: #ff9933; // Change the color on hover
+    }
+  }
+
+  // Apply specific styles to the Logout button
+  .logoutButton {
+    background-color: #cc0000;
+    color: #fff;
+    padding: 4px 8px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 10%;
+
+    &:hover {
+      background-color: #ff9933;
+    }
+  }
+}
