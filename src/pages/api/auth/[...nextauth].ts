@@ -1,9 +1,9 @@
-import NextAuth from "next-auth";
+import NextAuth, { AuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { Provider } from "next-auth/providers";
 import GoogleProvider from "next-auth/providers/google";
 
-export const authOptions = {
+const authOptions: AuthOptions = {
   // Configure one or more authentication providers
   providers: [
     GoogleProvider({
@@ -16,9 +16,9 @@ export const authOptions = {
     strategy: "jwt",
     maxAge: 30 * 24 * 60 * 60, // 30 days
   },
-  jwt: {
-    encryption: true,
-  },
+  // jwt: {
+  //   encryption: true,
+  // },
 };
 
 export default NextAuth(authOptions);
