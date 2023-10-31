@@ -1,12 +1,17 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
 import index from "../styles/index.module.scss";
+import { createClient } from "contentful";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../store/store";
+import { fetchIntialValue } from "../../store/chartDataSlice";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home({ chartData }: any) {
+  console.log(chartData);
+  const dispatch = useDispatch<AppDispatch>();
+  dispatch(fetchIntialValue(chartData));
   return (
     <>
       <Head>
@@ -27,4 +32,25 @@ export default function Home() {
       </main>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE,
+    accessToken: process.env.CONTENTFUL_TOKEN,
+  });
+
+  const res = await client.getEntries({
+    content_type: "chart",
+  });
+
+  const filteredChartdata = res.items.map((chart) => {
+    return chart.fields.chartData;
+  });
+
+  return {
+    props: {
+      chartData: filteredChartdata,
+    },
+  };
 }

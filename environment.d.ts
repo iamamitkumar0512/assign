@@ -4,6 +4,8 @@ declare global {
       NEXT_GOOGLE_CLIENT_ID: string;
       NEXT_GOOGLE_CLIENT_SECRET: string;
       NEXTAUTH_SECRET: string;
+      CONTENTFUL_SPACE: string;
+      CONTENTFUL_TOKEN: string;
     }
   }
 }

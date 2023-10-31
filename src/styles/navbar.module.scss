@@ -5,7 +5,7 @@
   align-items: center;
   background-color: rgb(203 213 225);
   padding: 10px;
-  border: 2px solid;
+  box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 5px;
   border-radius: 10px;
 }
 
@@ -28,7 +28,7 @@
   border: none;
   cursor: pointer;
   margin-right: 10px;
-  border-radius: 10%;
+  border-radius: 5%;
 
   &:hover {
     background-color: #ff9933; // Change the color on hover
@@ -79,7 +79,7 @@
     padding: 4px 8px;
     border: none;
     cursor: pointer;
-    margin-right: 5px;
+    margin-right: 1px;
     border-radius: 10%;
 
     &:hover {
@@ -94,7 +94,7 @@
     padding: 4px 8px;
     border: none;
     cursor: pointer;
-    margin-right: 5px;
+    margin-right: 1px;
     border-radius: 10%;
 
     &:hover {
