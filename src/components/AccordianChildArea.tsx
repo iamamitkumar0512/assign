@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAppSelector } from "../../store/store";
 import DynamicDropdown from "./DropDown";
 import BarCharts from "./BarCharts";
@@ -24,11 +24,19 @@ const AccordianChildArea = () => {
   const handleChildData = (data: string) => {
     setChildData(data);
     chartData?.chartData.map((chart: any) => {
+      if (Object.keys(chart)[0] == data) {
+        setData(chart[data]);
+      }
+    });
+  };
+
+  useEffect(() => {
+    chartData?.chartData.map((chart: any) => {
       if (Object.keys(chart)[0] == childData) {
         setData(chart[childData]);
       }
     });
-  };
+  }, [chartData]);
 
   return (
     <div className={styles.container}>

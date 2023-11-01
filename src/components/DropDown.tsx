@@ -11,7 +11,7 @@ const DynamicDropdown = ({ options, onData }: ChildProps) => {
 
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedOption(event.target.value);
-    onData(selectedOption);
+    onData(event.target.value);
   };
 
   return (

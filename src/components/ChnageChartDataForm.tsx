@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/form.module.scss";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../store/store";
@@ -12,10 +12,13 @@ type data = {
 };
 
 function ChangeChartDataForm({ data1, chartName }: data) {
-  console.log(data1, chartName);
+  const [data, setData] = useState([] as number[]);
   const labels: string[] = data1.categories;
   const intialValue = data1.values;
-  const [data, setData] = useState(intialValue);
+
+  useEffect(() => {
+    setData(intialValue);
+  }, [intialValue]);
 
   const handleInputChange = (
     index: number,
@@ -35,6 +38,8 @@ function ChangeChartDataForm({ data1, chartName }: data) {
       })
     );
   };
+
+  console.log(data);
 
   const dispatch = useDispatch<AppDispatch>();
 
